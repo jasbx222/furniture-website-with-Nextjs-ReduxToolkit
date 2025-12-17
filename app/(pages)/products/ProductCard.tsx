@@ -1,6 +1,6 @@
 "use client";
 import { Box, Button, Card, Typography } from "@mui/material";
-import { Heart, Share2 } from "lucide-react";
+import { EyeIcon, Heart, Share2 } from "lucide-react";
 import Image from "next/image";
 
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
@@ -8,6 +8,7 @@ import type { RootState, AppDispatch } from "../../redux/store";
 import { addToCart } from "@/app/redux/feature/CartSlice";
 import { toast } from "react-toastify";
 import { successMessage } from "@/app/helpers/Messages";
+import Link from "next/link";
 
 const ProductCard = ({
   id,
@@ -109,8 +110,10 @@ const ProductCard = ({
 
           <Box sx={{ display: "flex", gap: 3, color: "#fff" }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <Share2 size={18} />
-              <Typography variant="body2">Share</Typography>
+              <EyeIcon size={18} />
+              <Link href={`/products/show/${id}`}>
+                <Typography variant="body2">Show</Typography>
+              </Link>
             </Box>
 
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
