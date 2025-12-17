@@ -31,6 +31,7 @@ const Products = () => {
               justifyContent="center"
             >
               <ProductCard
+              id={prod.id}
                 active={prod.active}
                 title={prod.name}
                 img={prod.image}
